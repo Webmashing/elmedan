@@ -1,0 +1,512 @@
+/*
+Theme Name: Shock_Aniss
+Theme URI: http://www.elmedan.com
+Description: sport
+Version: 1.0
+Author: Aniss   
+Author URI: http://www.elmedan.org
+*/
+@import "static/css/framework/bootstrap.less";
+@import "static/css/framework/responsive.less";
+
+/* INIT STYLE*/
+/**/
+
+
+
+@font-face {
+	font-family: 'Conv_PalatinoLTArabic-Regular';
+	src: url('static/css/fonts/PalatinoLTArabic-Regular.eot');
+	src: local('☺'), url('static/css/fonts/PalatinoLTArabic-Regular.woff') format('woff'), url('static/css/fonts/PalatinoLTArabic-Regular.ttf') format('truetype'), url('static/css/fonts/PalatinoLTArabic-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: "Conv_PalatinoLTArabic-Regular";
+  font-size: @baseFontSize;
+  line-height: @baseLineHeight;
+  color: @textColor;
+  background-color: @white;
+  text-align: right;
+  background-color: #EAEAEA;
+}
+
+#content {
+	margin-bottom: 100px;
+}
+
+p {
+	line-height: 1.8em;
+}
+
+h2, h4, h3 {
+	line-height: 1.6em;
+	margin: 0;
+}
+
+a {
+	line-height: 1.4em;
+}
+
+
+.readmore {
+	background: none repeat scroll 0 0 #0E93D1;
+	color: #FFFFFF;
+	float: left;
+	font-size: 13px;
+	font-weight: bold;
+	margin-top: 5px;
+	padding: 3px 5px;
+	position: relative;
+	.border-radius(5px);
+	
+	.arrow {
+		width:16px;
+		height: 16px;
+		background: url("static/css/images/glyphicons-halflings-white.png") no-repeat scroll -432px -70px transparent;
+		float:left;
+	}
+}
+
+/*// HEADER*/
+/*//------------------------------*/
+
+#header-bar {
+	#gradient > .vertical(#4C4C4C, #333333);
+	padding: 10px;
+	border-bottom: 1px solid #444;
+	color: #fff;
+	
+	#search-form {
+		border-right: 1px solid #444444;
+		float: left;
+		margin-right: 10px;
+		margin-top: 2px;
+		width: 255px;
+		input {
+			border: 1px solid #222222;
+			.border-radius(5px);
+			display: block;
+			font-size: 14px;
+			padding: 2px 22px 5px 5px;
+			text-align: right;
+			width: 210px;
+			background: url("static/css/images/search.png") no-repeat scroll 98% 4px white;
+		}
+	}
+	
+	#fb-connect {
+		display: inline-block;
+		width: 220px;
+		text-align: left;
+	}
+	
+	#header-bar-menu {
+		direction: rtl;
+		font-family: sans-serif;
+		margin: 2px 0 0;
+		padding: 0;
+		
+		li {
+			border-left: 1px solid #333333;
+			display: inline-block;
+			margin-left: 5px;
+			padding: 0 0 5px 10px;
+		}
+		li:last-child {
+			border: none;
+		}
+		.home, .contact-us, .about {
+			width:16px;
+			height: 16px;
+			float:right;
+			margin-left: 5px;
+			position: relative;
+			top:3px;
+		}
+		.home {
+			background: url("static/css/images/glyphicons-halflings-white.png") no-repeat scroll 0px -25px transparent;
+		}
+		.contact-us {
+			background: url("static/css/images/glyphicons-halflings-white.png") no-repeat scroll -72px 0px transparent;
+		}
+		.about {
+			background: url("static/css/images/glyphicons-halflings-white.png") no-repeat scroll -168px 0px transparent;
+		}
+	}
+}
+
+#header {
+	background: #3A3A3A;
+	margin-bottom: 20px;
+	#header-content {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	#logo {
+		float:right;
+		display: inline;
+		width: 260px;
+		margin-left: 10px;
+	}
+	#ads-728 {
+		width:728px;
+		float:right;
+		display: inline;
+	}
+	#header-menu {
+		background: #FFCC00;
+		padding: 10px;
+		
+		ul {
+			margin: 0;
+			
+			li {
+				margin: 0;
+				
+				a {
+					margin: 0;
+				}
+			}
+		}
+	}
+}
+
+/*// BOXES*/
+/*//--------------------------------*/
+
+
+.box {
+	margin-top: 20px;
+}
+
+/*// LAST NEWS*/
+/*--------------------------------*/
+
+#last-news {
+	background: #fff;
+	overflow: hidden;
+	padding: 9px;
+	.border-radius(5px);
+	
+	ul {
+		direction: rtl;
+		padding: 0;
+		margin: 0;
+	}
+	
+	li {
+		border-bottom: 1px dotted #EFEFEF;
+		height: 45px;
+		margin-bottom: 3px;
+		overflow: hidden;
+		padding-bottom: 3px;
+		
+		.thumb {
+			margin-left: 10px;
+			float: right;
+			position: relative;
+		}
+		
+		span {
+			background: none repeat scroll 0 0 #FFFFFF;
+			border-radius: 3px 0 0 0;
+			bottom: 0;
+			font-family: sans-serif;
+			font-size: 10px;
+			margin: 0;
+			padding: 0 3px;
+			position: absolute;
+			right: 0;
+		}
+		
+		a {
+			color: #333;
+			position: relative;
+			top: 4px;
+		}
+	}
+	
+	li:last-child {
+		margin: 0;
+		padding: 0;
+		border: 0;
+	}
+}
+
+i.time {
+	width: 16px;
+	height: 16px;
+	background: url("static/css/images/glyphicons-halflings.png") no-repeat scroll -45px -22px transparent;
+	float:right;
+	margin-left: 1px;
+}
+
+#last-news-thumbs {
+	background: #333;
+	height: 270px;
+	.border-radius(5px);
+	
+	
+	#small-thumb {
+		float: left;
+		margin: 9px 0;
+		width: 250px;
+		position: relative;
+		
+		.caption {
+			position: absolute;
+			width:220px;
+			.nicegrad;
+			right: 0;
+			bottom: 0;
+			
+			span {
+				.border-radius(3px 0 0 3px);
+				background: none repeat scroll 0 0 #FFFFFF;
+				font-family: tahoma;
+				padding: 2px 2px 1px 4px;
+				position: absolute;
+				right: 0;
+			}
+			
+			h4 {
+				color: #FFFFFF;
+				float: right;
+				margin: 25px 0 10px;
+				padding-right: 10px;
+				width: 200px;
+			}
+		}
+		
+		#thumb {
+			margin-bottom: 11px;
+			position: relative;
+		}
+		
+		#thumb:last-child {
+			margin-bottom: 0;
+		}
+	}
+	
+	#big-thumb {
+		width: 420px;
+		height: 270px;
+		overflow: hidden;
+		display: inline-block;
+		position: relative;
+		
+		.caption {
+			position: absolute;
+			bottom: 0;
+			padding-top: 70px;
+			.nicegrad;
+			width: 100%;
+			
+			span {
+				.border-radius(3px 0 0 3px);
+				background: none repeat scroll 0 0 #FFFFFF;
+				font-family: tahoma;
+				padding: 2px 2px 1px 4px;
+				position: absolute;
+				right: 0;
+			}
+			
+			h2 {
+				color: #FFFFFF;
+				float: right;
+				margin: 20px 0 15px;
+				padding-right: 10px;
+				width: 370px;
+			}
+		}
+	}
+}
+
+/*// EQUIPE NATIONAL*/
+/*//----------------------------------*/
+
+#ads-300 {
+	padding: 10px;
+	background: #fff;
+	.border-radius(3px);
+}
+
+.span8 {
+	#split-3 {
+		background: #fff;
+		padding: 10px;
+		height: 254px;
+		overflow: hidden;
+		.border-radius(3px);
+		
+		#item {
+			width: 206px;
+			margin-left: 10px;
+			float:right;
+			
+			#thumb {
+				margin: 0;
+				border-bottom:  1px dotted #efefef;
+				padding-bottom: 5px;
+				position: relative;
+				
+				.caption {
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					width: 195px;
+					h3 {
+						color: #fff;
+						position: relative;
+						bottom: 15px;
+						display: inline;
+						background: rgba(14, 147, 209, 0.8);
+						line-height: 1.96em;
+						padding-left: 5px;
+					}
+				}
+				
+				img {
+					margin: 0;
+				}
+				
+			}
+			
+			p {
+				margin: 0;
+			}
+		}
+		
+		#item:last-child {
+			margin: 0;
+		}
+	}
+}
+
+/*// LES VERT*/
+/*//------------------------*/
+
+#les-vert {
+	background: #fff;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	float:right;
+	
+	#big-thumb {
+		position: relative;
+		float: right;
+		
+		.caption {
+			bottom: 15px;
+			position: absolute;
+			right: 0;
+			width: 350px;
+		}
+		
+		h2 {
+			background: none repeat scroll 0 0 rgba(14, 147, 209, 0.8);
+			color: #FFFFFF;
+			display: inline;
+			line-height: 1.9em;
+			padding-left: 5px;
+			padding-right: 0;
+			position: relative;
+		}
+	}
+	
+	#news-list {
+		padding-right: 10px;
+	}
+	
+	li {
+		border-bottom: 1px dotted #EFEFEF;
+		float: right;
+		padding-bottom: 5px;
+		margin-bottom: 5px;
+		height: 75px;
+		overflow: hidden;
+	}
+	
+	li:last-child {
+		padding: 0;
+		margin: 0;
+		border: 0;
+	}
+	
+	img {
+		float: right;
+		margin-left: 10px;
+	}
+	
+	a {
+		line-height: 2em;
+		position: relative;
+		top: 3px;
+	}
+}
+
+/*// VOTE*/
+/*//-----------------------*/
+
+#vote {
+	background: #fff;
+	padding: 10px;
+	min-height: 250px;
+}
+
+/*// PHOTO*/
+/*//-----------------------*/
+
+#photo {
+	background: #fff;
+	padding: 10px;
+	float: right;
+	
+	li {
+		float: left;
+	}
+}
+
+/*// VIDEOS*/
+/*//-----------------------*/
+
+#videos {
+	background: #fff;
+	padding: 10px;
+	float: right;
+	
+	ul {
+		margin: 0;
+		float: right;
+	}
+	
+	li {
+		margin: 0;
+		float: right;
+	}
+}
+
+
+/*// PHOTO HOVER*/
+/*//-----------------------*/
+
+.thumb {
+	
+	img {
+		position: relative;
+	}
+	img:before {
+		border: 1px solid rgba(14, 147, 209, 1);
+	}
+}
+
+/*// FOOTER*/
+/*//-----------------------*/
+
+#footer {
+	min-height: 100px;
+	background: none repeat scroll 0 0 #3A3A3A;
+}
