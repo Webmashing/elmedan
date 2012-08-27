@@ -6,6 +6,7 @@ $cat_last=983;
 $cat_moht=993;
 $cat_awal=987;
 $cat_photo=991;
+$cat_video=992;
 
 function custom_excerpt_length( $length ) {
 	return 18;
@@ -19,6 +20,37 @@ function costum_exceprt_more($more){
     return $lien;
 }
 add_filter('excerpt_more', 'costum_exceprt_more');
+
+
+
+
+
+
+
+
+
+
+ function get_video_image($video)
+				{$f=explode("watch?v=",$video);
+				
+				
+				$id=$f[1];
+				if(strpos($f[1],"&")!=-1):
+				$t=explode("&",$f[1]);
+				$id=$t[0];
+				endif;
+				
+				
+				return "http://img.youtube.com/vi/".$id."/default.jpg";
+				}
+			    
+
+
+
+
+
+
+
 
 function post_date_diff_seconds($co){
 $string= (string)$co;
