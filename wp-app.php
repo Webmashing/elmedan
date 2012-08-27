@@ -12,6 +12,7 @@
  */
 define('APP_REQUEST', true);
 
+
 /** Set up WordPress environment */
 require_once('./wp-load.php');
 

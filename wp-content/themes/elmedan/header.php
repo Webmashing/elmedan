@@ -17,8 +17,7 @@
 	<script src="<?php bloginfo('template_directory'); ?>/static/js/libs/less.min.js"></script>
 </head>
 <body>
-    facegoko retesed
-    test test
+
 <!--START HEADER-->
 <div id="header-bar">
     <div class="container">

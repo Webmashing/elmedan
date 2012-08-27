@@ -7,71 +7,71 @@
     <div class="container">
         <div class="row">
             <div class="span4">
-		
                 <div id="last-news">
-                    
-		    <ul>
-                        
-                        
+		           <ul> 
                         <?php
-						$j=0;
-						$last_news = new WP_Query(array('showposts'=>5,'cat'=>$cat_last));
-						$i=0;
-						while($last_news->have_posts()):
-						$last_news->the_post();
-						//$id[$i]=the_post()->ID;
-						$tab_last[$i]= $post->ID;
-						$without[$j]=$post->ID;
-						$j++;
-						$i++;
-						
+                            /**
+                             * Display 5 latest post
+                             */
+    						$j=0;
+    						$last_news = new WP_Query(array('showposts'=>5,'cat'=>$cat_last));
+    						$i=0;
+    						while($last_news->have_posts()):
+    						$last_news->the_post();
+    						//$id[$i]=the_post()->ID;
+    						$tab_last[$i]= $post->ID;
+    						$without[$j]=$post->ID;
+    						$j++;
+    						$i++;
 					    ?>
                         <li>
                             <div class="thumb">
                                 <a href="<?php $link=get_permalink($post->ID);echo $link; ?>">
-				<img src="<?php  $img=get_post_meta($post->ID, "image", true); if($img)echo resize($img,array("w"=>"75","h"=>"40")); ?>" />
+				                    <img src="<?php  $img=get_post_meta($post->ID, "image", true); if($img)echo resize($img,array("w"=>"75","h"=>"40")); ?>" />
                                 </a>
-				<span><?php echo time_hour($post->post_date); ?></span>
+				                <span><?php echo time_hour($post->post_date); ?></span>
                             </div>
                             <a href="<?php echo $link; ?>"> <?php  echo get_the_title($post->ID);   ?></a>
                         </li>
-			<?php endwhile; ?>
-                    
+			            <?php endwhile; // end last posts ?>
                     </ul>
                 </div>
             </div>
+
             <div class="span8">
                 <div id="last-news-thumbs">
 					     <?php
-						
-						//$last_news = new WP_Query('showposts=3 & cat='.$cat_week);
-						$last_news = new WP_Query(array('showposts'=>3 , 'cat'=>$cat_week, 'post__not_in'=>$without));
-						$i=0;
-						while($last_news->have_posts()):
-						$last_news->the_post();
-						//$id[$i]=the_post()->ID;
-						$tab_week[$i]= $post->ID;
-						$without[$j]=$post->ID;
-						$j++;
-						$i++;
-						endwhile;
+                            /**
+                             * Display 3 featured posts
+                             */
+    						//$last_news = new WP_Query('showposts=3 & cat='.$cat_week);
+    						$last_news = new WP_Query(array('showposts'=>3 , 'cat'=>$cat_week, 'post__not_in'=>$without));
+    						$i=0;
+    						while($last_news->have_posts()):
+    						$last_news->the_post();
+    						//$id[$i]=the_post()->ID;
+    						$tab_week[$i]= $post->ID;
+    						$without[$j]=$post->ID;
+    						$j++;
+    						$i++;
+    						endwhile; // end 
 					    ?>
                     <div class="row">
                         <div id="small-thumb">
                             <div id="thumb">
                                 <a href="<?php $link=get_permalink($tab_week[1]);echo $link; ?>"> 
-				 <img src="<?php  $img=get_post_meta($tab_week[1], "image", true); if($img) echo resize($img,array("w"=>"220","h"=>"120")); ?>" />
+				                    <img src="<?php  $img=get_post_meta($tab_week[1], "image", true); if($img) echo resize($img,array("w"=>"220","h"=>"120")); ?>" />
                                 </a>
-				<div class="caption">
+				                <div class="caption">
                                     <span><i class="time"></i><?php post_date_diff_seconds(get_post($tab_week[1])->post_date_gmt); ?></span>
                                     <h4><a href="<?php echo $link;  ?>"><?php  echo get_the_title($tab_week[1]); ?></a> </h4>
                                 </div>
                             </div>
                             <div id="thumb">
-				<a href="<?php $link=get_permalink($tab_week[2]);echo $link; ?>">
-                                <img src="<?php $img=get_post_meta($tab_week[2], "image", true); if($img) echo resize($img,array("w"=>"220","h"=>"120")); ?>" />
+				                <a href="<?php $link=get_permalink($tab_week[2]);echo $link; ?>">
+                                    <img src="<?php $img=get_post_meta($tab_week[2], "image", true); if($img) echo resize($img,array("w"=>"220","h"=>"120")); ?>" />
                                 </a>
-				<div class="caption">
+				                <div class="caption">
                                     <span><i class="time"></i><?php post_date_diff_seconds(get_post($tab_week[2])->post_date); ?> </span>
                                     <h4><a href="<?php echo $link;  ?>"><?php  echo get_the_title($tab_week[2]); ?></a></h4>
                                 </div>
@@ -79,14 +79,13 @@
                         </div>
                         <div id="big-thumb">
                             <a href="<?php $link=get_permalink($tab_week[0]);echo $link; ?>">
-			    <img src="<?php $img=get_post_meta($tab_week[0], "image", true); if($img)echo resize($img,array("w"=>"420","h"=>"270")); ?>" />
+			                     <img src="<?php $img=get_post_meta($tab_week[0], "image", true); if($img)echo resize($img,array("w"=>"420","h"=>"270")); ?>" />
                             </a>
-			    <div class="caption">
+			                 <div class="caption">
                                 <span><i class="time"></i> <?php post_date_diff_seconds(get_post($tab_week[0])->post_date); ?></span>
-                            
-			        <h2> <a href="<?php echo $link;  ?>"><?php  echo get_the_title($tab_week[0]);   ?></a></h2>
-                            <?php wp_reset_query();?>
-			    </div>
+                                <h2> <a href="<?php echo $link;  ?>"><?php  echo get_the_title($tab_week[0]);   ?></a></h2>
+                                <?php wp_reset_query();?>
+			                 </div>
                         </div>
                     </div>
                 </div>
@@ -99,27 +98,37 @@
             <div class="row">
                 <div class="span8">
                     <div id="split-3">
-			 <?php
-					     
-						$nationale = new WP_Query(array('showposts'=>3,'cat'=>$cat_nationale,'post__not_in'=>$without));
-						$i=0;
-				while($nationale->have_posts()):
-						$nationale->the_post();
-						?>
-						
+                        <?php
+                            /**
+                             * Display 3 Equipe national posts
+                             */
+    						$nationale = new WP_Query(array('showposts'=>3,'cat'=>$cat_nationale,'post__not_in'=>$without));
+    						$i=0;
+    				        while($nationale->have_posts()):
+    						$nationale->the_post();
+    					?>
 						
 					    <div id="item">
-						<div id="thumb">
-						    <a href="<?php $link=get_permalink($post->ID);echo $link; ?>">
-						     <img src="<?php  $img=get_post_meta($post->ID, "image", true); if($img) echo resize($img,array("w"=>"205","h"=>"150", "crop"=>true )); ?>" />
-						     </a>
-						     <div class="caption"> <h3><a href="<?php echo $link; ?>"><?php  echo get_the_title($post->ID); ?></a></h4></div>
-						</div>
+    						<div id="thumb">
+    						    <a href="<?php $link=get_permalink($post->ID);echo $link; ?>">
+                                    <img src="<?php  $img=get_post_meta($post->ID, "image", true); if($img) echo resize($img,array("w"=>"205","h"=>"150", "crop"=>true )); ?>" />
+    						     </a>
+    						     <div class="caption"><h3><a href="<?php echo $link; ?>"><?php  echo get_the_title($post->ID); ?></a></h3></div>
+    						</div>
 						    <p><?php the_excerpt(); costum_exceprt_more($more);?></p>
 					    </div>
 						
-			<?php $tab_nat[$i]=$post->ID;$i++; endwhile; wp_reset_query();
-			for($i=0;$i<count($tab_nat);$i++):$without[$j]=$tab_nat[$i];$j++;endfor;$j++;?>
+			            <?php 
+                            $tab_nat[$i]=$post->ID;
+                            $i++; 
+                            endwhile; 
+                            wp_reset_query();
+			                for($i=0;$i<count($tab_nat);$i++):
+                                $without[$j]=$tab_nat[$i];
+                            $j++;
+                            endfor;
+                            $j++;
+                        ?>
                     </div>
                 </div>
 	    
@@ -148,45 +157,48 @@
                     <div id="les-vert">
                         <div class="row">
                             <div class="span5">
-				<?php 
-				$moht=new WP_Query(array('showposts'=>1,'cat'=>$cat_moht,'post__not_in'=>$without ));
-				if($moht->have_posts()):
-				
-				$moht->the_post();
-				$tab_moht[0]=$post->ID;
-				 ?>
+                				<?php 
+                                    /**
+                                     * Display big mohtarifin post
+                                     */
+                    				$moht=new WP_Query(array('showposts'=>1,'cat'=>$cat_moht,'post__not_in'=>$without ));
+                    				if($moht->have_posts()):
+                    				$moht->the_post();
+                    				$tab_moht[0]=$post->ID;
+                				?>
                                 <div id="big-thumb">
                                    <a href="<?php $link=get_permalink($post->ID);echo $link; ?>">
-				   <img src="<?php $img=get_post_meta($post->ID,"image",true);if($img)echo resize($img,array("w"=>"395","h"=>"250", "crop"=>false ));?>"/>
+				                     <img src="<?php $img=get_post_meta($post->ID,"image",true);if($img)echo resize($img,array("w"=>"395","h"=>"250", "crop"=>false ));?>"/>
                                    </a>
-				    <div class="caption">
-                                    <h2><a href="<?php echo $link;  ?>"> <?php the_title(); ?> </a></h2>
+                                    <div class="caption">
+                                        <h2><a href="<?php echo $link;  ?>"> <?php the_title(); ?> </a></h2>
                                     </div>
                                 </div>
-				<?php endif;?>
+				                <?php endif;?>
                             </div>
+
                             <div class="span4">
                                 <div id="news-list">
                                     <ul>
-					<?php
-					$i=1;
-					$moht=new WP_Query(array('showposts'=>3,'cat'=>$cat_moht,'post__not_in'=>$without , 'offset'=>1 ));
-					while($moht->have_posts()):
-					$moht->the_post();
-					$tab_moht[$i]=$post->ID;
-					$i++;
-					?>
+                    					<?php
+                        					$i=1;
+                        					$moht=new WP_Query(array('showposts'=>3,'cat'=>$cat_moht,'post__not_in'=>$without , 'offset'=>1 ));
+                        					while($moht->have_posts()):
+                        					$moht->the_post();
+                        					$tab_moht[$i]=$post->ID;
+                        					$i++;
+                    					?>
 					
                                         <li>
                                             <a href="<?php $link=get_permalink($post->ID);echo $link; ?>">
-					    <img src="<?php $img=get_post_meta($post->ID,'image',true);if($img)echo resize($img, array("w"=>"100","h"=>"75", "crop"=>true)); ?>"/>
-					    </a>
-					    <a href="<?php echo $link; ?>">
-                                            <h3><?php the_title();  ?></h3>
-					    </a>
+					                           <img src="<?php $img=get_post_meta($post->ID,'image',true);if($img)echo resize($img, array("w"=>"100","h"=>"75", "crop"=>true)); ?>"/>
+					                        </a>
+					                        <a href="<?php echo $link; ?>">
+                                                <h3><?php the_title();  ?></h3>
+					                       </a>
                                         </li>
                                         <?php endwhile;for($i=0;$i<count($tab_moht);$i++):$without[$j]=$tab_moht[$i];$j++;endfor;$j++;wp_reset_query();?>
-                                        
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -202,37 +214,31 @@
                 <div class="span6">
                     <div id="photo">
                         <ul>
-			    <?php
-			    $gallery_query=new WP_query(array("showposts"=>6,"cat"=>$cat_photo));
-			    $i=1;
-			    while ($gallery_query->have_posts()):
-			    $gallery_query->the_post();
-			    
-			   
-			    ?>
-                            <li><?php if($i>1 && $i <6):?>
-				
-				   <a href="<?php $link=get_permalink($post->ID);echo $link; ?>">
-				    <img src="<?php $img=get_post_meta($post->ID,'image',true);if($img)echo resize($img, array("w"=>"157","h"=>"125", "crop"=>true)); ?>"/>
-				    </a>
-				    
-				    
-				   
-				   <?php else: ?>
-				    <a href="<?php  $link=get_permalink($post->ID);echo $link; ?>">
-				    <img src="<?php $img=get_post_meta($post->ID,'image',true);if($img)echo resize($img, array("w"=>"156","h"=>"125", "crop"=>true)); ?>"/>
-				    </a>
-				    <?php endif;?>
-				    
-				    
-				</li>
-				    <?php  $i++;
-					    endwhile;
-					    wp_reset_query();
-				    ?>
-                           
-                            
-			    
+            			    <?php
+                                /**
+                                 * Display 6 galleries
+                                 */
+                			    $gallery_query=new WP_query(array("showposts"=>6,"cat"=>$cat_photo));
+                			    $i=1;
+                			    while ($gallery_query->have_posts()):
+                			    $gallery_query->the_post();
+            			    ?>
+                            <li>
+                                <?php if($i>1 && $i <6):?>
+				                    <a href="<?php $link=get_permalink($post->ID);echo $link; ?>">
+				                        <img src="<?php $img=get_post_meta($post->ID,'image',true);if($img)echo resize($img, array("w"=>"157","h"=>"125", "crop"=>true)); ?>"/>
+				                    </a>
+				                <?php else: ?>
+				                <a href="<?php  $link=get_permalink($post->ID);echo $link; ?>">
+				                    <img src="<?php $img=get_post_meta($post->ID,'image',true);if($img)echo resize($img, array("w"=>"156","h"=>"125", "crop"=>true)); ?>"/>
+				                </a>
+				                <?php endif;?>
+				            </li>
+
+        				    <?php  $i++;
+        					    endwhile;
+        					    wp_reset_query();
+        				    ?>
                         </ul>
                     </div>
                 </div>
@@ -253,26 +259,27 @@
             <div class="row">
                 <div class="span8">
                     <div id="split-3">
-			
-			<?php
-					$i=1;
-					$awal=new WP_Query(array('showposts'=>3,'cat'=>$cat_awal,'post__not_in'=>$without  ));
-					while($awal->have_posts()):
-					$awal->the_post();
-					$tab_awal[$i]=$post->ID;
-					$i++;
-			            ?>
+    			        <?php
+                            /**
+                             * Display 3 posts of LEAGUE 1
+                             */
+        					$i=1;
+        					$awal=new WP_Query(array('showposts'=>3,'cat'=>$cat_awal,'post__not_in'=>$without  ));
+        					while($awal->have_posts()):
+        					$awal->the_post();
+        					$tab_awal[$i]=$post->ID;
+        					$i++;
+    			        ?>
                         <div id="item">
-			    <div id="thumb">
+			                <div id="thumb">
                                 <a href="<?php $link=get_permalink($post->ID);echo $link;?>">
-				<img src="<?php $img=get_post_meta($post->ID,'image',true);if($img)echo resize($img,array("w"=>"205","h"=>"145")) ?>"/>
-				</a>
+				                    <img src="<?php $img=get_post_meta($post->ID,'image',true);if($img)echo resize($img,array("w"=>"205","h"=>"145")) ?>"/>
+				                </a>
                                 <div class="caption"><h3><a href="<?php echo $link; ?>"><?php the_title(); ?> </a></h3></div>
                             </div>
-			    
                             <p><?php the_excerpt(); costum_exceprt_more($more);?></p>
                         </div>
-			<?php endwhile;?>
+			            <?php endwhile;?>
                     </div>
                 </div>
                 
@@ -297,4 +304,3 @@
 </div>
 
 <!--END CONTENT-->
-
