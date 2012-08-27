@@ -128,7 +128,7 @@ $string= (string)$co;
                   
                        else { $week=(int)($d/7);
                               if($week==1)echo "قبل أسبوع";
-                              else echo " قبل".$week."أسابيع ";      
+                              else echo "قبل ".$week." أسابيع";      
                               
                         }
                   

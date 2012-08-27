@@ -17,8 +17,7 @@
 	<script src="<?php bloginfo('template_directory'); ?>/static/js/libs/less.min.js"></script>
 </head>
 <body>
-    facegoko retesed
-    test test
+
 <!--START HEADER-->
 <div id="header-bar">
     <div class="container">
@@ -34,8 +33,8 @@
             <div class="span6">
                 <ul id="header-bar-menu">
                     <li><i class="home"></i> <a href="<?php get_home_url(); ?>">الرئيسية</a></li>
-                    <li><i class="about"></i>من نحن</li>
-                    <li><i class="contact-us"></i>إتصل بنا</li>
+                    <li><i class="about"></i><a href="#">من نحن</a></li>
+                    <li><i class="contact-us"></i><a href="#">إتصل بنا</a></li>
                 </ul>
             </div>
         </div>
@@ -58,7 +57,16 @@
         <div class="row">
             <div class="span12">
                 <div id="header-menu">
-                    
+                    <ul>
+                        <li><a href="#">نتائج مباشرة</a></li>
+                        <li><a href="#">المنتخب الوطني</a></li>
+                        <li><a href="#">محترفينا</a></li>
+                        <li><a href="#">البطولة المحترفة</a></li>
+                        <li><a href="#">كرة العالمية</a></li>
+                        <li><a href="#">حوارات</a></li>
+                        <li><a href="#">صور</a></li>
+                        <li><a href="#">فيديو</a></li>
+                    </ul>
                 </div>
             </div>
         </div>

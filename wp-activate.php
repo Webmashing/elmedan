@@ -9,6 +9,7 @@ require( './wp-blog-header.php' );
 if ( !is_multisite() ) {
 	wp_redirect( site_url( '/wp-login.php?action=register' ) );
 	die();
+	
 }
 
 if ( is_object( $wp_object_cache ) )
