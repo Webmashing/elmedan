@@ -9,11 +9,6 @@ Author URI: http://www.elmedan.org
 @import "static/css/framework/bootstrap.less";
 @import "static/css/framework/responsive.less";
 
-/* INIT STYLE*/
-/**/
-
-
-
 @font-face {
 	font-family: 'Conv_PalatinoLTArabic-Regular';
 	src: url('static/css/fonts/PalatinoLTArabic-Regular.eot');
