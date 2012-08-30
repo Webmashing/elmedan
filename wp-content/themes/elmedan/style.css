@@ -60,22 +60,28 @@ a {
 
 
 .readmore {
-	background: none repeat scroll 0 0 #0E93D1;
+	background: none repeat scroll 0 0 #12A0E2;
 	color: #FFFFFF;
 	float: left;
 	font-size: 13px;
 	font-weight: bold;
 	margin-top: 5px;
-	padding: 3px 5px;
+	padding: 3px 5px 5px;
 	position: relative;
 	.border-radius(5px);
-	
+
 	.arrow {
 		width:16px;
 		height: 16px;
 		background: url("static/css/images/glyphicons-halflings-white.png") no-repeat scroll -432px -70px transparent;
 		float:left;
 	}
+
+}
+
+.readmore:hover {
+	background: #0E93D1;
+	color: #fff;
 }
 
 /*// HEADER*/
@@ -247,7 +253,7 @@ a {
 			margin-left: 10px;
 			float: right;
 			position: relative;
-			height: 44px;
+			height: 45px;
 		}
 		
 		span {
@@ -264,10 +270,14 @@ a {
 		}
 		
 		a {
-			color: #000;
+			color: #33383D;
 			position: relative;
-			top: 4px;
 			line-height: 1.6em;
+			font-size: 13px;
+		}
+
+		a:hover {
+			color: #005580;
 		}
 	}
 	
@@ -322,6 +332,7 @@ i.time {
 				margin: 25px 0 10px;
 				padding-right: 10px;
 				width: 200px;
+				font-size: 16px;
 
 				a {
 					color: #fff;
@@ -406,8 +417,19 @@ i.time {
 				position: absolute;
 				bottom: 0;
 				left: 0;
+				font-family: FrutigerBlack,Tahoma;
+				font-size: 11px;
 			}
 			
+			#time {
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				font-family: FrutigerBlack,Tahoma;
+				font-size: 11px;
+				color: #444;
+			}
+
 			#thumb {
 				margin: 0;
 				border-bottom:  1px dotted #efefef;
@@ -459,6 +481,11 @@ i.time {
 	padding-bottom: 10px;
 	float:right;
 	
+	#big-news {
+		width: 370px;
+		float: left;
+	}
+
 	#big-thumb {
 		position: relative;
 		float: right;
@@ -478,37 +505,52 @@ i.time {
 			padding-left: 5px;
 			padding-right: 0;
 			position: relative;
+
+			a {
+				color: #fff;
+			}
 		}
 	}
 	
 	#news-list {
-		padding-right: 10px;
-	}
-	
-	li {
-		border-bottom: 1px dotted #EFEFEF;
-		float: right;
-		padding-bottom: 5px;
-		margin-bottom: 5px;
-		height: 75px;
-		overflow: hidden;
-	}
-	
-	li:last-child {
-		padding: 0;
-		margin: 0;
-		border: 0;
-	}
-	
-	img {
-		float: right;
-		margin-left: 10px;
-	}
-	
-	a {
-		line-height: 2em;
-		position: relative;
-		top: 3px;
+	    float: right;
+	    padding-right: 10px;
+	    width: 385px;
+
+		.new-list-item {
+		    float: right;
+		    height: 120px;
+		    margin-left: 10px;
+		    width: 182px;
+		    overflow: hidden;
+		    position: relative;
+
+			.caption {
+				bottom: 10px;
+				position: absolute;
+				right: 0;
+				width: 100%;
+			}
+			
+			h3 {
+				background: none repeat scroll 0 0 rgba(14, 147, 209, 0.8);
+				color: #FFFFFF;
+				display: inline;
+				line-height: 1.96em;
+				padding-left: 5px;
+				padding-right: 0;
+				position: relative;
+
+				a {
+					color: #fff;
+				}
+			}
+
+		}
+
+		.new-list-item:nth-child(1), .new-list-item:nth-child(2) {
+			margin-bottom: 10px;
+		} 
 	}
 }
 

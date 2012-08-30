@@ -27,7 +27,7 @@
                         <li>
                             <div class="thumb">
                                 <a href="<?php $link=get_permalink($post->ID);echo $link; ?>">
-				                    <img src="<?php  $img=get_post_meta($post->ID, "image", true); if($img)echo resize($img,array("w"=>"75","h"=>"40")); ?>" />
+				                    <img src="<?php  $img=get_post_meta($post->ID, "image", true); if($img)echo resize($img,array("w"=>"75","h"=>"45")); ?>" />
                                 </a>
 				                <span><?php echo time_hour($post->post_date); ?></span>
                             </div>
@@ -111,11 +111,12 @@
 					    <div id="item">
     						<div id="thumb">
     						    <a href="<?php $link=get_permalink($post->ID);echo $link; ?>">
-                                    <img src="<?php  $img=get_post_meta($post->ID, "image", true); if($img) echo resize($img,array("w"=>"205","h"=>"150", "crop"=>true )); ?>" />
+                                    <img src="<?php  $img=get_post_meta($post->ID, "image", true); if($img) echo resize($img,array("w"=>"205","h"=>"140", "crop"=>true )); ?>" />
     						     </a>
     						     <div class="caption"><h3><a href="<?php echo $link; ?>"><?php  echo get_the_title($post->ID); ?></a></h3></div>
     						</div>
-						    <p><?php the_excerpt(); costum_exceprt_more($more);?></p>
+						    <?php the_excerpt(); costum_exceprt_more($more);?>
+                            <div id="time"><span><i class="time"></i>  قبل 2 أسابيع</span></div>
 					    </div>
 						
 			            <?php 
@@ -156,7 +157,7 @@
                 <div class="span9">
                     <div id="les-vert">
                         <div class="row">
-                            <div class="span5">
+                            <div id="big-news">
                 				<?php 
                                     /**
                                      * Display big mohtarifin post
@@ -168,7 +169,7 @@
                 				?>
                                 <div id="big-thumb">
                                    <a href="<?php $link=get_permalink($post->ID);echo $link; ?>">
-				                     <img src="<?php $img=get_post_meta($post->ID,"image",true);if($img)echo resize($img,array("w"=>"395","h"=>"250", "crop"=>false ));?>"/>
+				                     <img src="<?php $img=get_post_meta($post->ID,"image",true);if($img)echo resize($img,array("w"=>"340","h"=>"250", "crop"=>false ));?>"/>
                                    </a>
                                     <div class="caption">
                                         <h2><a href="<?php echo $link;  ?>"> <?php the_title(); ?> </a></h2>
@@ -177,29 +178,16 @@
 				                <?php endif;?>
                             </div>
 
-                            <div class="span4">
-                                <div id="news-list">
-                                    <ul>
-                    					<?php
-                        					$i=1;
-                        					$moht=new WP_Query(array('showposts'=>3,'cat'=>$cat_moht,'post__not_in'=>$without , 'offset'=>1 ));
-                        					while($moht->have_posts()):
-                        					$moht->the_post();
-                        					$tab_moht[$i]=$post->ID;
-                        					$i++;
-                    					?>
-					
-                                        <li>
-                                            <a href="<?php $link=get_permalink($post->ID);echo $link; ?>">
-					                           <img src="<?php $img=get_post_meta($post->ID,'image',true);if($img)echo resize($img, array("w"=>"100","h"=>"75", "crop"=>true)); ?>"/>
-					                        </a>
-					                        <a href="<?php echo $link; ?>">
-                                                <h3><?php the_title();  ?></h3>
-					                       </a>
-                                        </li>
-                                        <?php endwhile;for($i=0;$i<count($tab_moht);$i++):$without[$j]=$tab_moht[$i];$j++;endfor;$j++;wp_reset_query();?>
-                                    </ul>
+                            <div id="news-list">
+                                <div class="new-list-item">
+                                    <a href="#"><img src="http://cache.daylife.com/imageserve/0aYa8OZ8Ux8sc/182x120.jpg" alt=""></a>
+                                    <div class="caption">
+                                        <h3><a href="#">و كان محل اهتمام نادي منشنغلدباخ الالماني</a></h3>
+                                    </div>
                                 </div>
+                                <div class="new-list-item"><img src="http://cache.daylife.com/imageserve/00recBU8t45ca/182x120.jpg"></div>
+                                <div class="new-list-item"><img src="http://cache.daylife.com/imageserve/08Nxaa3d90bEl/182x120.jpg"></div>
+                                <div class="new-list-item"><img src="http://cache.daylife.com/imageserve/0fKygRTbIX59Y/182x120.jpg"></div>
                             </div>
                         </div>
                     </div>
