@@ -589,6 +589,40 @@ i.time {
 		float: left;
 		width: 270px;
 		height: 250px;
+		position: relative;
+
+		.caption {
+			position: absolute;
+			width:260px;
+			padding: 5px;
+			.nicegrad;
+			right: 0;
+			bottom: 0;
+			
+			span {
+				.border-radius(3px 0 0 3px);
+				background: none repeat scroll 0 0 #FFFFFF;
+				font-family: FrutigerBlack,Tahoma;
+				font-size: 11px;
+				padding: 2px 2px 3px 5px;
+				line-height: 14px;
+				position: absolute;
+				right: 0;
+			}
+			
+			h3 {
+				color: #FFFFFF;
+				float: right;
+				margin: 25px 0 10px;
+				padding-right: 10px;
+				width: 200px;
+				font-size: 16px;
+
+				a {
+					color: #fff;
+				}
+			}
+		}
 	}
 
 	ul {
@@ -601,6 +635,39 @@ i.time {
 			width: 190px;
 			height: 120px;
 			overflow: hidden;
+			position: relative;
+
+		.caption {
+			position: absolute;
+			width:190px;
+			.nicegrad;
+			right: 0;
+			bottom: 0;
+			
+			span {
+				.border-radius(3px 0 0 3px);
+				background: none repeat scroll 0 0 #FFFFFF;
+				font-family: FrutigerBlack,Tahoma;
+				font-size: 11px;
+				padding: 2px 2px 3px 5px;
+				line-height: 14px;
+				position: absolute;
+				right: 0;
+			}
+			
+			h4 {
+				color: #FFFFFF;
+				float: right;
+				margin: 25px 0 10px;
+				padding-right: 10px;
+				width: 200px;
+				font-size: 14px;
+
+				a {
+					color: #fff;
+				}
+			}
+		}
 		}
 
 		li:first-child {

@@ -210,10 +210,37 @@
             <div class="row">
                 <div class="span6">
                     <div id="photo">
-                        <div class="big-photo"><img src="http://cache.daylife.com/imageserve/00recBU8t45ca/270x250.jpg"></div>
+                        <?php
+                            /**
+                             * Display 3 galleries
+                             */
+                            $gallery_query=new WP_query(array("showposts"=>3,"cat"=>$cat_photo));
+                            $i=1;
+                            while ($gallery_query->have_posts()):
+                            $gallery_query->the_post();
+                            $tab_photo[$i] = $post->ID;
+                            $i++;
+                            endwhile;
+                        ?>
+                        <div class="big-photo">
+                            <img src="<?php  $img=get_post_meta($tab_photo[1], "image", true); if($img) echo resize($img,array("w"=>"270","h"=>"250", "crop"=>true)); ?>" alt="<?php  echo get_the_title($tab_photo[1]); ?>" title="<?php  echo get_the_title($tab_photo[1]); ?>"/>
+                            <div class="caption">
+                                <span><i class="time"></i> <?php post_date_diff_seconds(get_post($tab_photo[1])->post_date); ?></span>
+                                <h3> <a href="<?php echo $link;  ?>"><?php  echo get_the_title($tab_photo[1]); ?></a></h3>
+                             </div>
+                        </div>
                         <ul class="small-photos">
-                            <li><img src="http://cache.daylife.com/imageserve/0fKygRTbIX59Y/190x120.jpg"></li>
-                            <li><img src="http://cache.daylife.com/imageserve/08Nxaa3d90bEl/190x120.jpg"></li>
+                            <?php 
+                            for($i = 2; $i <= 3; $i++): ?>
+                            <li>
+                                <img src="<?php  $img=get_post_meta($tab_photo[1], "image", true); if($img) echo resize($img,array("w"=>"190","h"=>"120")); ?>" alt="<?php  echo get_the_title($tab_photo[$i]); ?>" title="<?php  echo get_the_title($tab_photo[$i]); ?>"/>
+
+                                <div class="caption">
+                                    <span><i class="time"></i> <?php post_date_diff_seconds(get_post($tab_photo[$i])->post_date); ?></span>
+                                    <h4> <a href="<?php echo $link;  ?>"><?php  echo get_the_title($tab_photo[$i]); ?></a></h4>
+                                </div>
+                            </li>
+                            <? endfor; ?>
                         </ul>
                     </div>
                 </div>
