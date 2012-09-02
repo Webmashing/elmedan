@@ -116,7 +116,7 @@
     						     <div class="caption"><h3><a href="<?php echo $link; ?>"><?php  echo get_the_title($post->ID); ?></a></h3></div>
     						</div>
 						    <?php the_excerpt(); costum_exceprt_more($more);?>
-                            <div id="time"><span><i class="time"></i>  قبل 2 أسابيع</span></div>
+                            <div id="time"><span><i class="time"></i>  <?php post_date_diff_seconds($post->post_date); ?></span></div>
 					    </div>
 						
 			            <?php 
@@ -172,6 +172,7 @@
 				                     <img src="<?php $img=get_post_meta($post->ID,"image",true);if($img)echo resize($img,array("w"=>"340","h"=>"250", "crop"=>false ));?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>"/>
                                    </a>
                                     <div class="caption">
+                                        <span><i class="time"></i>  <?php post_date_diff_seconds($post->post_date); ?></span>
                                         <h2><a href="<?php echo $link;  ?>"> <?php the_title(); ?> </a></h2>
                                     </div>
                                 </div>
@@ -192,7 +193,7 @@
                                         <img src="<?php $img=get_post_meta($post->ID,'image',true);if($img)echo resize($img, array("w"=>"182","h"=>"120", "crop"=>true)); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
                                     </a>
                                     <div class="caption">
-                                        <h3><a href="<?php $link=get_permalink($post->ID); echo $link; ?>"><?php the_title(); ?></a></h3>
+                                        <h4><a href="<?php $link=get_permalink($post->ID); echo $link; ?>"><?php the_title(); ?></a></h4>
                                     </div>
                                 </div>
                                 <?php endwhile;for($i=0;$i<count($tab_moht);$i++):$without[$j]=$tab_moht[$i];$j++;endfor;$j++;wp_reset_query();?>

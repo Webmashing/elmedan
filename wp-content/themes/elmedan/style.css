@@ -52,10 +52,12 @@ p {
 h2, h4, h3 {
 	line-height: 1.6em;
 	margin: 0;
+	direction: rtl;
 }
 
 a {
 	line-height: 1.4em;
+	outline: none;
 }
 
 
@@ -440,7 +442,7 @@ i.time {
 					position: absolute;
 					bottom: 0;
 					right: 0;
-					width: 170px;
+					width: 100%;
 					h3 {
 						position: relative;
 						bottom: 15px;
@@ -494,7 +496,19 @@ i.time {
 			bottom: 15px;
 			position: absolute;
 			right: 0;
-			width: 350px;
+			width: 270px;
+
+			span {
+				.border-radius(3px 0 0 3px);
+				background: none repeat scroll 0 0 #FFFFFF;
+				font-family: FrutigerBlack,Tahoma;
+				font-size: 11px;
+				padding: 2px 2px 2px 5px;
+				position: absolute;
+				right: 0;
+				top:-30px;
+			}
+
 		}
 		
 		h2 {
@@ -532,7 +546,7 @@ i.time {
 				width: 100%;
 			}
 			
-			h3 {
+			h4 {
 				background: none repeat scroll 0 0 rgba(14, 147, 209, 0.8);
 				color: #FFFFFF;
 				display: inline;
