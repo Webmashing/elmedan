@@ -10,9 +10,6 @@
 	<title><?php bloginfo('name'); wp_title();?></title>
 	<meta name="description" content="">
 	<meta name="author" content="">
-
-	<meta name="viewport" content="width=device-width">
-
 	<link rel="stylesheet/less" href="<?php bloginfo('stylesheet_url'); ?>" >
 	<script src="<?php bloginfo('template_directory'); ?>/static/js/libs/less.min.js"></script>
 </head>

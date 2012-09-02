@@ -18,3 +18,31 @@
                                         </li>
                                         <?php endwhile;for($i=0;$i<count($tab_moht);$i++):$without[$j]=$tab_moht[$i];$j++;endfor;$j++;wp_reset_query();?>
                                     </ul>
+
+                        <ul>
+                            <?php
+                                /**
+                                 * Display 6 galleries
+                                 */
+                                $gallery_query=new WP_query(array("showposts"=>,"cat"=>$cat_photo));
+                                $i=1;
+                                while ($gallery_query->have_posts()):
+                                $gallery_query->the_post();
+                            ?>
+                            <li>
+                                <?php if($i>1 && $i <6):?>
+                                    <a href="<?php $link=get_permalink($post->ID);echo $link; ?>">
+                                        <img src="<?php $img=get_post_meta($post->ID,'image',true);if($img)echo resize($img, array("w"=>"157","h"=>"125", "crop"=>true)); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>"/>
+                                    </a>
+                                <?php else: ?>
+                                <a href="<?php  $link=get_permalink($post->ID);echo $link; ?>">
+                                    <img src="<?php $img=get_post_meta($post->ID,'image',true);if($img)echo resize($img, array("w"=>"156","h"=>"125", "crop"=>true)); ?>"/>
+                                </a>
+                                <?php endif;?>
+                            </li>
+
+                            <?php  $i++;
+                                endwhile;
+                                wp_reset_query();
+                            ?>
+                        </ul>

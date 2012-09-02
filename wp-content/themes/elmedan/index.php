@@ -11,7 +11,7 @@
 		           <ul> 
                         <?php
                             /**
-                             * Display 5 latest post
+                             * Display 5 latest post!
                              */
     						$j=0;
     						$last_news = new WP_Query(array('showposts'=>5,'cat'=>$cat_last));
@@ -210,32 +210,10 @@
             <div class="row">
                 <div class="span6">
                     <div id="photo">
-                        <ul>
-            			    <?php
-                                /**
-                                 * Display 6 galleries
-                                 */
-                			    $gallery_query=new WP_query(array("showposts"=>6,"cat"=>$cat_photo));
-                			    $i=1;
-                			    while ($gallery_query->have_posts()):
-                			    $gallery_query->the_post();
-            			    ?>
-                            <li>
-                                <?php if($i>1 && $i <6):?>
-				                    <a href="<?php $link=get_permalink($post->ID);echo $link; ?>">
-				                        <img src="<?php $img=get_post_meta($post->ID,'image',true);if($img)echo resize($img, array("w"=>"157","h"=>"125", "crop"=>true)); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>"/>
-				                    </a>
-				                <?php else: ?>
-				                <a href="<?php  $link=get_permalink($post->ID);echo $link; ?>">
-				                    <img src="<?php $img=get_post_meta($post->ID,'image',true);if($img)echo resize($img, array("w"=>"156","h"=>"125", "crop"=>true)); ?>"/>
-				                </a>
-				                <?php endif;?>
-				            </li>
-
-        				    <?php  $i++;
-        					    endwhile;
-        					    wp_reset_query();
-        				    ?>
+                        <div class="big-photo"><img src="http://cache.daylife.com/imageserve/00recBU8t45ca/270x250.jpg"></div>
+                        <ul class="small-photos">
+                            <li><img src="http://cache.daylife.com/imageserve/0fKygRTbIX59Y/190x120.jpg"></li>
+                            <li><img src="http://cache.daylife.com/imageserve/08Nxaa3d90bEl/190x120.jpg"></li>
                         </ul>
                     </div>
                 </div>

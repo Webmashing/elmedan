@@ -7,7 +7,6 @@ Author: Aniss
 Author URI: http://www.elmedan.org
 */
 @import "static/css/framework/bootstrap.less";
-@import "static/css/framework/responsive.less";
 
 /* Style init */
 
@@ -581,12 +580,32 @@ i.time {
 /*//-----------------------*/
 
 #photo {
-	background: #fff;
+	background: #333;
 	padding: 10px;
 	float: right;
-	
-	li {
+	.border-radius(3px);
+
+	.big-photo {
 		float: left;
+		width: 270px;
+		height: 250px;
+	}
+
+	ul {
+		float: right;
+		margin-left: 10px;
+		width: 190px;
+		overflow: hidden;
+
+		li {
+			width: 190px;
+			height: 120px;
+			overflow: hidden;
+		}
+
+		li:first-child {
+			margin-bottom: 10px;
+		}
 	}
 }
 
