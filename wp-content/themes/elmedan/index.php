@@ -25,12 +25,12 @@
 					    ?>
                         <li>
                             <div class="thumb">
-                                <a href="<?php $link=get_permalink($post->ID);echo $link; ?>" title="<?php  echo get_the_title($post->ID); ?>">
-				                    <img src="<?php  $img=get_post_meta($post->ID, "image", true); if($img)echo resize($img,array("w"=>"75","h"=>"45")); ?>" alt="<?php  echo get_the_title($post->ID); ?>" title="<?php  echo get_the_title($post->ID); ?>" />
+                                <a href="<?php $link=get_permalink($post->ID);echo $link; ?>">
+				                    <img src="<?php  $img=get_post_meta($post->ID, "image", true); if($img)echo resize($img,array("w"=>"75","h"=>"45")); ?>" alt="<?php  echo get_the_title($post->ID); ?>"/>
                                 </a>
 				                <span><?php echo time_hour($post->post_date); ?></span>
                             </div>
-                            <a href="<?php echo $link; ?>" title="<?php  echo get_the_title($post->ID); ?>"><?php  echo get_the_title($post->ID); ?></a>
+                            <a href="<?php echo $link; ?>"><?php  echo get_the_title($post->ID); ?></a>
                         </li>
 			            <?php endwhile; // end last posts ?>
                     </ul>
@@ -59,10 +59,10 @@
                         <div id="small-thumb">
                         <?php for($i=1; $i <= 2; $i++): ?>
                             <div id="thumb">
-                                <a href="<?php $link=get_permalink($tab_week[$i]); echo $link; ?>" title="<?php  echo get_the_title($tab_week[$i]); ?>"> 
-				                    <img src="<?php  $img=get_post_meta($tab_week[$i], "image", true); if($img) echo resize($img,array("w"=>"220","h"=>"120")); ?>" alt="<?php  echo get_the_title($tab_week[1]); ?>" title="<?php  echo get_the_title($tab_week[1]); ?>"/>
+                                <a href="<?php $link=get_permalink($tab_week[$i]); echo $link; ?>"> 
+				                    <img src="<?php  $img=get_post_meta($tab_week[$i], "image", true); if($img) echo resize($img,array("w"=>"220","h"=>"120")); ?>" alt="<?php  echo get_the_title($tab_week[1]); ?>"/>
                                 </a>
-                                <a href="<?php echo $link;  ?>" title="<?php  echo get_the_title($tab_week[$i]); ?>">
+                                <a href="<?php echo $link;  ?>">
     				                <div class="caption">
                                         <span><i class="time"></i><?php post_date_diff_seconds(get_post($tab_week[$i])->post_date_gmt); ?></span>
                                         <h4><?php  echo get_the_title($tab_week[$i]); ?></h4>
@@ -73,10 +73,10 @@
 
                         </div>
                         <div id="big-thumb">
-                            <a href="<?php $link=get_permalink($tab_week[0]);echo $link; ?>" title="<?php  echo get_the_title($tab_week[0]); ?>">
-			                     <img src="<?php $img=get_post_meta($tab_week[0], "image", true); if($img)echo resize($img,array("w"=>"420","h"=>"270")); ?>" alt="<?php  echo get_the_title($tab_week[0]); ?>" title="<?php  echo get_the_title($tab_week[0]); ?>" />
+                            <a href="<?php $link=get_permalink($tab_week[0]);echo $link; ?>">
+			                     <img src="<?php $img=get_post_meta($tab_week[0], "image", true); if($img)echo resize($img,array("w"=>"420","h"=>"270")); ?>" alt="<?php  echo get_the_title($tab_week[0]); ?>"/>
                             </a>
-                            <a href="<?php echo $link;  ?>" title="<?php  echo get_the_title($tab_week[0]); ?>">
+                            <a href="<?php echo $link;  ?>">
     			                 <div class="caption">
                                     <span><i class="time"></i> <?php post_date_diff_seconds(get_post($tab_week[0])->post_date); ?></span>
                                     <h2><?php  echo get_the_title($tab_week[0]); ?></h2>
@@ -107,10 +107,10 @@
 						
 					    <div id="item">
     						<div id="thumb">
-    						    <a href="<?php $link=get_permalink($post->ID);echo $link; ?>" title="<?php  echo get_the_title($post->ID); ?>">
-                                    <img src="<?php  $img=get_post_meta($post->ID, "image", true); if($img) echo resize($img,array("w"=>"205","h"=>"140", "crop"=>true )); ?>" title="<?php  echo get_the_title($post->ID); ?>" alt="<?php  echo get_the_title($post->ID); ?>" />
+    						    <a href="<?php $link=get_permalink($post->ID);echo $link; ?>">
+                                    <img src="<?php  $img=get_post_meta($post->ID, "image", true); if($img) echo resize($img,array("w"=>"205","h"=>"140", "crop"=>true )); ?>" alt="<?php  echo get_the_title($post->ID); ?>" />
     						     </a>
-                                 <a href="<?php echo $link; ?>" title="<?php  echo get_the_title($post->ID); ?>">
+                                 <a href="<?php echo $link; ?>">
     						          <div class="caption"><h3><?php  echo get_the_title($post->ID); ?></h3></div>
                                  </a>
     						</div>
@@ -167,10 +167,10 @@
                     				$tab_moht[0]=$post->ID;
                 				?>
                                 <div id="big-thumb">
-                                   <a href="<?php $link=get_permalink($post->ID);echo $link; ?>" title="<?php the_title(); ?>">
-				                     <img src="<?php $img=get_post_meta($post->ID,"image",true);if($img)echo resize($img,array("w"=>"340","h"=>"250", "crop"=>false ));?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>"/>
+                                   <a href="<?php $link=get_permalink($post->ID);echo $link; ?>">
+				                     <img src="<?php $img=get_post_meta($post->ID,"image",true);if($img)echo resize($img,array("w"=>"340","h"=>"250", "crop"=>false ));?>"/>
                                    </a>
-                                   <a href="<?php echo $link;  ?>" title="<?php the_title(); ?>">
+                                   <a href="<?php echo $link;  ?>">
                                         <div class="caption">
                                             <span><i class="time"></i>  <?php post_date_diff_seconds($post->post_date); ?></span>
                                             <h2><?php the_title(); ?></h2>
@@ -190,10 +190,10 @@
                                     $i++;
                                 ?>
                                 <div class="new-list-item">
-                                    <a href="<?php $link=get_permalink($post->ID); echo $link; ?>" title="<?php the_title(); ?>">
-                                        <img src="<?php $img=get_post_meta($post->ID,'image',true);if($img)echo resize($img, array("w"=>"182","h"=>"120", "crop"=>true)); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
+                                    <a href="<?php $link=get_permalink($post->ID); echo $link; ?>">
+                                        <img src="<?php $img=get_post_meta($post->ID,'image',true);if($img)echo resize($img, array("w"=>"182","h"=>"120", "crop"=>true)); ?>" alt="<?php the_title(); ?>">
                                     </a>
-                                    <a href="<?php $link=get_permalink($post->ID); echo $link; ?>" title="<?php the_title(); ?>">
+                                    <a href="<?php $link=get_permalink($post->ID); echo $link; ?>">
                                         <div class="caption">
                                             <h4><?php the_title(); ?></h4>
                                         </div>
@@ -226,10 +226,10 @@
                             endwhile;
                         ?>
                         <div class="big-photo">
-                            <a href="<?php $link=get_permalink($tab_photo[0]); echo $link; ?>" title="<?php  echo get_the_title($tab_photo[0]); ?>">
-                                <img src="<?php  $img=get_post_meta($tab_photo[0], "image", true); if($img) echo resize($img,array("w"=>"270","h"=>"250", "crop"=>true)); ?>" alt="<?php  echo get_the_title($tab_photo[0]); ?>" title="<?php  echo get_the_title($tab_photo[0]); ?>"/>
+                            <a href="<?php $link=get_permalink($tab_photo[0]); echo $link; ?>">
+                                <img src="<?php  $img=get_post_meta($tab_photo[0], "image", true); if($img) echo resize($img,array("w"=>"270","h"=>"250", "crop"=>true)); ?>" alt="<?php  echo get_the_title($tab_photo[0]); ?>"/>
                             </a>
-                            <a href="<?php echo $link;  ?>" title="<?php  echo get_the_title($tab_photo[0]); ?>">
+                            <a href="<?php echo $link;  ?>">
                                 <div class="caption">
                                     <span><i class="time"></i> <?php post_date_diff_seconds(get_post($tab_photo[0])->post_date); ?></span>
                                     <h3><?php  echo get_the_title($tab_photo[0]); ?></h3>
@@ -240,10 +240,10 @@
                             <?php 
                             for($i = 1; $i <= 2; $i++): ?>
                             <li>
-                                <a href="<?php $link=get_permalink($tab_photo[$i]); echo $link; ?>" title="<?php  echo get_the_title($tab_photo[$i]); ?>">
-                                    <img src="<?php  $img=get_post_meta($tab_photo[$i], "image", true); if($img) echo resize($img,array("w"=>"190","h"=>"120")); ?>" alt="<?php  echo get_the_title($tab_photo[$i]); ?>" title="<?php  echo get_the_title($tab_photo[$i]); ?>"/>
+                                <a href="<?php $link=get_permalink($tab_photo[$i]); echo $link; ?>">
+                                    <img src="<?php  $img=get_post_meta($tab_photo[$i], "image", true); if($img) echo resize($img,array("w"=>"190","h"=>"120")); ?>" alt="<?php  echo get_the_title($tab_photo[$i]); ?>"/>
                                 </a>
-                                <a href="<?php echo $link;  ?>" title="<?php  echo get_the_title($tab_photo[$i]); ?>">
+                                <a href="<?php echo $link;  ?>">
                                     <div class="caption">
                                         <span><i class="time"></i> <?php post_date_diff_seconds(get_post($tab_photo[$i])->post_date); ?></span>
                                         <h4><?php  echo get_the_title($tab_photo[$i]); ?></h4>
@@ -285,7 +285,7 @@
                         <div id="item">
 			                <div id="thumb">
                                 <a href="<?php $link=get_permalink($post->ID);echo $link;?>">
-				                    <img src="<?php $img=get_post_meta($post->ID,'image',true);if($img)echo resize($img,array("w"=>"205","h"=>"145")) ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>"/>
+				                    <img src="<?php $img=get_post_meta($post->ID,'image',true);if($img)echo resize($img,array("w"=>"205","h"=>"145")) ?>" alt="<?php the_title(); ?>"/>
 				                </a>
                                 <div class="caption"><h3><a href="<?php echo $link; ?>"><?php the_title(); ?> </a></h3></div>
                             </div>
