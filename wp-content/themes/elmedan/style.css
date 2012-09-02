@@ -57,6 +57,14 @@ h2, h4, h3 {
 a {
 	line-height: 1.4em;
 	outline: none;
+	text-decoration: none;
+	span {
+		color: #444;
+	}
+
+	h4, h3 {
+		color: #fff;
+	}
 }
 
 
