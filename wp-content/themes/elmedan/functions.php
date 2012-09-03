@@ -136,7 +136,16 @@ function time_hour($t){
 }
 
 
-           
+
+ function get_video_image($video) {
+        $f=explode("watch?v=",$video);
+        $id=$f[1];
+        if(strpos($f[1],"&")!=-1):
+        $t=explode("&",$f[1]);
+        $id=$t[0];
+        endif;       
+        return "http://img.youtube.com/vi/".$id."/default.jpg";
+}
            
            
            
