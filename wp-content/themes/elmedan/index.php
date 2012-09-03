@@ -27,8 +27,8 @@
                             <div class="thumb">
                                 <a href="<?php $link=get_permalink($post->ID);echo $link; ?>">
 				                    <img src="<?php  $img=get_post_meta($post->ID, "image", true); if($img)echo resize($img,array("w"=>"75","h"=>"45")); ?>" alt="<?php  echo get_the_title($post->ID); ?>"/>
-                                </a>
 				                <span><?php echo time_hour($post->post_date); ?></span>
+                                </a>
                             </div>
                             <a href="<?php echo $link; ?>"><?php  echo get_the_title($post->ID); ?></a>
                         </li>
@@ -168,7 +168,7 @@
                 				?>
                                 <div id="big-thumb">
                                    <a href="<?php $link=get_permalink($post->ID);echo $link; ?>">
-				                     <img src="<?php $img=get_post_meta($post->ID,"image",true);if($img)echo resize($img,array("w"=>"340","h"=>"250", "crop"=>false ));?>"/>
+				                     <img src="<?php $img=get_post_meta($post->ID,"image",true);if($img)echo resize($img,array("w"=>"340","h"=>"250", "crop"=>true ));?>"/>
                                    </a>
                                    <a href="<?php echo $link;  ?>">
                                         <div class="caption">

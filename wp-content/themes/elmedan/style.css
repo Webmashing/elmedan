@@ -263,6 +263,9 @@ a {
 			float: right;
 			position: relative;
 			height: 45px;
+			a {
+				float: right;
+			}
 		}
 		
 		span {

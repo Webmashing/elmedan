@@ -104,7 +104,7 @@ $string= (string)$co;
                         }
                               
                         elseif($minutes==2)echo "قبل دقيقتين";
-			else echo " قبل".$minutes."دقائق ";
+			else echo " قبل ".$minutes." دقائق ";
                         
                   }
                   elseif($hours==1)
@@ -113,7 +113,7 @@ $string= (string)$co;
                               }
                               elseif($minutes==1){echo "قبل دقيقة";}
                                elseif($minutes==2)echo "قبل دقيقتين";
-				else echo " قبل".$minutes."دقائق ";
+				else echo " قبل ".$minutes." دقائق ";
                         }
                        elseif($hours==2)echo "قبل ساعتين";
                         else echo  " قبل ".$hours." ساعات ";
