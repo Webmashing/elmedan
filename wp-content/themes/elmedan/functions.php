@@ -60,31 +60,27 @@ $string= (string)$co;
  
  /***********************************/
   if($y>0){
-      if($y==1)echo "العام الماضي ";
+      if($y==1) echo "العام الماضي ";
       else  echo " قبل ".$y." سنوات ";
   }
   else{
       if($m>0) {
       if($m ==1 ){//since a month or around
-      if ($day>=$p_day)echo "قبل شهر";//
+      if ($day>=$p_day) echo "قبل شهر";//
       
       else{//the past month and the current day is in the first days of the month
-            if($d==1)echo "البارحة";
-	    elseif($d==2)echo"قبل يومين";//in 1st day of month ( february not considerated in this pgm)
+            if($d==1) echo "البارحة";
+	    elseif($d==2) echo"قبل يومين";//in 1st day of month ( february not considerated in this pgm)
             elseif($d<7) echo " قبل".$d."أيام ";//less than a month
                  
                   
                         else { $week=(int)($d/7);
-                              if($week==1)echo "قبل أسبوع";
+                              if($week==1) echo "قبل أسبوع";
                               else echo " قبل ".$week." أسابيع ";      
-                              
                         }
-                        
-                  
             }
-           
       }
-      elseif($m==2)echo " منذ".$m."شهرين ";
+      elseif($m==2) echo " منذ".$m."شهرين ";
 	 else echo " منذ".$m."أشهر ";//different month
       }
       elseif($m==0){//same month and different day
@@ -92,18 +88,18 @@ $string= (string)$co;
                   
                   if($hours==0){
                         if($minutes==0){
-                              if($seconds==1)echo "قبل ثانية";
+                              if($seconds==1) echo "قبل ثانية";
                               else echo " قبل ".$seconds." ثواني ";
                               
                         }
                         elseif($minutes==1){
                               if($today_time[2]>=$p_time[2])
                                echo "قبل دقيقة";
-                              elseif($seconds==1)echo "قبل ثانية";
+                              elseif($seconds==1) echo "قبل ثانية";
                               else echo " قبل ".$seconds." ثواني ";
                         }
                               
-                        elseif($minutes==2)echo "قبل دقيقتين";
+                        elseif($minutes==2) echo "قبل دقيقتين";
 			else echo " قبل ".$minutes." دقائق ";
                         
                   }
@@ -112,46 +108,36 @@ $string= (string)$co;
                               echo "قبل ساعة";
                               }
                               elseif($minutes==1){echo "قبل دقيقة";}
-                               elseif($minutes==2)echo "قبل دقيقتين";
+                               elseif($minutes==2) echo "قبل دقيقتين";
 				else echo " قبل ".$minutes." دقائق ";
                         }
-                       elseif($hours==2)echo "قبل ساعتين";
+                       elseif($hours==2) echo "قبل ساعتين";
                         else echo  " قبل ".$hours." ساعات ";
-                        
-                  
             }
-            elseif($d==1)echo "البارحة";
-		elseif($d==2)echo"قبل يومين";//in 1st day of month ( february not considerated in this pgm)
+            elseif($d==1) echo "البارحة";
+		elseif($d==2) echo"قبل يومين";//in 1st day of month ( february not considerated in this pgm)
             elseif($d<7) echo " قبل ".$d." أيام ";
             
                   
                   
                        else { $week=(int)($d/7);
-                              if($week==1)echo "قبل أسبوع";
-                              else echo "قبل ".$week." أسابيع";      
-                              
-                        }
-                  
+                              if($week==1) echo "قبل أسبوع";
+                              else echo "قبل ".$week." أسابيع";       
+                        }     
             }
-            
-            
-            
-      }
-      
-            
-            
-              
-
+      }            
 }
+
 function time_hour($t){
     $wa9t=  explode(' ',$t);
- $p_time=explode(':',$wa9t[1]);
- $t=$p_time[0].":".$p_time[1];
- return $t;
+    $p_time=explode(':',$wa9t[1]);
+    $t=$p_time[0].":".$p_time[1];
+    return $t;
 }
+
+
            
            
            
            
-           
-            ?>
+?>

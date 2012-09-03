@@ -297,21 +297,36 @@
                 
                 <div class="span4">
                     <div id="videos">
+                        <?php 
+                        $i=1;
+                        $video_query=new WP_query(array("showposts"=>4,"cat"=>$cat_video));
+                        while ($video_query->have_posts()):
+                        $video_query->the_post();
+                        ?>
+                        <?php if($i==1):?>
                         <div class="big-thumb">
-                            <img src="http://placehold.it/300x160"/>
-                        </div>
-                        
-                        <a href="#next"></a>
-                        <ul>
-                            <li><img src="http://placehold.it/90x90"/></li>
-                            <li><img src="http://placehold.it/90x90"/></li>
-                            <li><img src="http://placehold.it/90x90"/></li>
+                            <a href="<?php $link=get_permalink($post->ID);echo $link; ?>">
+                                <img src="<?php $video=get_post_meta($post->ID,'video',true); $img=get_video_image($video);if($img)echo $img; ?>" width="300" height="160"/>
+                            </a>
+                         </div>                   
+                         <ul>   
+                            <?php else:?>  
+                            <li>
+                                <a href="<?php $link=get_permalink($post->ID);echo $link; ?>">
+                                    <img src="<?php $video=get_post_meta($post->ID,'video',true); $img=get_video_image($video);if($img)echo $img  ?>" width="100" height="90"/>
+                                </a>
+                            </li>
+                            <?php endif;?>  
+                            <?php  
+                                $i++;
+                                endwhile;
+                                wp_reset_query();
+                            ?>
                         </ul>
                     </div>
                 </div>
             </div>
-        </div>
-        
+        </div> 
     </div>
 </div>
 
