@@ -316,3 +316,5 @@
 </div>
 
 <!--END CONTENT-->
+
+<?php get_footer(); ?>
