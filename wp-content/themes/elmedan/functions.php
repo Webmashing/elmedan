@@ -144,7 +144,7 @@ function time_hour($t){
         $t=explode("&",$f[1]);
         $id=$t[0];
         endif;       
-        return "http://img.youtube.com/vi/".$id."/default.jpg";
+        return "http://img.youtube.com/vi/".$id."/0.jpg";
 }
            
            

@@ -287,7 +287,7 @@
                                 <a href="<?php $link=get_permalink($post->ID);echo $link;?>">
 				                    <img src="<?php $img=get_post_meta($post->ID,'image',true);if($img)echo resize($img,array("w"=>"205","h"=>"145")) ?>" alt="<?php the_title(); ?>"/>
 				                </a>
-                                <div class="caption"><h3><a href="<?php echo $link; ?>"><?php the_title(); ?> </a></h3></div>
+                                <a href="<?php echo $link; ?>"><div class="caption"><h3><?php the_title(); ?></h3></div></a>
                             </div>
                             <p><?php the_excerpt(); costum_exceprt_more($more);?></p>
                         </div>

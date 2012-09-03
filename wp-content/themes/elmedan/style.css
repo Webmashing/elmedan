@@ -729,4 +729,6 @@ i.time {
 #footer {
 	min-height: 100px;
 	background: none repeat scroll 0 0 #3A3A3A;
+	position: relative;
+	bottom: 0;
 }
