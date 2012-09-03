@@ -15,6 +15,7 @@
 
 	<link rel="stylesheet/less" href="<?php bloginfo('stylesheet_url'); ?>" >
 	<script src="<?php bloginfo('template_directory'); ?>/static/js/libs/less.min.js"></script>
+	<?php wp_head();?>
 </head>
 <body>
     facegoko retesed
