@@ -146,7 +146,24 @@ function time_hour($t){
         endif;       
         return "http://img.youtube.com/vi/".$id."/0.jpg";
 }
-           
+ 
+ function to_json ($p_id){
+    $post_cat=get_the_category( $p_id );
+   $custom_query = new WP_Query("cat=".$post_cat,true);
+   while($custom_query->have_posts()):
+   $custom_query->the_post();
+   $cat_nom=get_the_category($post->ID);
+   $articles[]=array('permalink'=>get_permalink($post->ID, true),
+                                                     'title'=>get_the_title(),
+                                                     'summary'=>get_the_excerpt(),
+                                                     'post_content'=>get_the_content(),
+                                                     'author'=>get_the_author(),
+                                                     'category'=> $cat_nom[0]->cat_name
+                                                    );
+   endwhile;
+    return json_encode($articles);}          
            
            
 ?>
+
+

@@ -4,6 +4,9 @@
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
+	
+	
+	
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
@@ -14,6 +17,16 @@
 	<script src="<?php bloginfo('template_directory'); ?>/static/js/libs/less.min.js"></script>
 </head>
 <body>
+<script language="javascript" type="text/javascript">
+<!--
+function popitup(url) {
+	newwindow=window.open(url,'name','height=700,width=700');
+	if (window.focus) {newwindow.focus()}
+	return false;
+}
+
+// -->
+</script>
 
 <!--START HEADER-->
 <div id="header-bar">
@@ -31,7 +44,7 @@
                 <ul id="header-bar-menu">
                     <li><i class="home"></i> <a href="<?php get_home_url(); ?>">الرئيسية</a></li>
                     <li><i class="about"></i><a href="#">من نحن</a></li>
-                    <li><i class="contact-us"></i><a href="#">إتصل بنا</a></li>
+                    <li><i class="contact-us"></i><a  href="popupex.html" onclick="return popitup('contact')">إتصل بنا</a></li>
                 </ul>
             </div>
         </div>
