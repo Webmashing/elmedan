@@ -1,11 +1,13 @@
-define(['jquery','underscore','backbone'], function($, _, Backbone) {
+define(['jquery','underscore','backbone', 'views/article'], function($, _, Backbone, articleView) {
     
     var Router = Backbone.Router.extend({
         initialize: function() {
             console.log("new Router initialized");
+            if(page_type==="article") { this.article(); };
         },
-        routes: {
-            '': 'home'
+
+        article: function() {
+            var article_view = new articleView();
         }
     });
     

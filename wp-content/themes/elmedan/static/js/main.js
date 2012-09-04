@@ -7,7 +7,11 @@ require.config({
           jquery: 'libs/jquery.min',
           underscore: 'libs/underscore',
           backbone: 'libs/backbone',
-          text: 'libs/text'
+          text: 'libs/text',
+          sticky: 'libs/sticky',
+          jcarousel: 'libs/jcarousel',
+          mousewheel: 'libs/mousewheel',
+          easing: 'libs/easing'
         }
   
     });
