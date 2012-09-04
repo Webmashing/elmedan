@@ -758,9 +758,10 @@ i.time {
 	    float: right;
 
 	    .related_articles_items {
-	    	max-heigh: 320px !important;
-	    	height: 320px !important;
+	    	max-heigh: 370px !important;
+	    	height: 370px!important;
 	    	overflow: hidden;
+	    	margin-bottom: 7px !important;
 	    	ul {
 	    	
 	    	}
