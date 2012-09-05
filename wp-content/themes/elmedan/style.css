@@ -795,6 +795,8 @@ i.time {
 	    			padding: 5px;
 	    			background-color: #fff;
 	    			float: right;
+	    			height: 70px;
+	    			overflow: hidden;
 	    			transition: background-color 0.2s linear;
 	    			-webkit-transition: background-color 0.2s linear;
 	    			-moz-transition: background-color 0.2s linear;
@@ -830,6 +832,9 @@ i.time {
 	    			margin-left: 10px;
 	    		}
 	    	}
+	    }
+	    .ads_250 {
+	    	margin: 10px;
 	    }
 	}
 

@@ -9,8 +9,8 @@
 					<div class="top_bar"><i class="icon-down-circle"></i>إقرأ أيضاً</div>
 					<div class="related_articles_items">
 						<ul>
-							<?php for($i=0; $i<=6; $i++): ?>
-							<li>
+							<?php for($i=0; $i<=10; $i++): ?>
+							<li data-item="<?php echo $i; ?>">
 								<img src="http://cache.daylife.com/imageserve/0aYa8OZ8Ux8sc/100x70.jpg">
 								<a href="#">إنهزام شبيبة القبائل وديا امام الفتح الرباطي المغربي 1-0</a>
 								<span><i class="icon-clock"></i> قبل دقيقة</span>
@@ -35,6 +35,7 @@
 								<li><i class="icon-user"></i> أسامة</li>
 								<li><i class="icon-bookmark"></i> محترفينا </li>
 								<li><i class="icon-clock"></i> 12 أغسطس</li>
+								<li><i class="icon-comment"></i> تعليقات (3)</li>
 							</ul>
 
 							<div id="share-bottons">

@@ -15,8 +15,13 @@ define(
 				$("#info-share").sticky({bottomSpacing: 120, wrapperClassName:"info-share-wrap"});
 				$(".related_articles_items").jCarouselLite({
 					mouseWheel: true,
-					vertical: true
-				})
+					vertical: true,
+					circular: false
+				});
+				$(".top_bar").click(function(){
+					var test = $("ul").find("li[data-item=9]").position();
+					$('.related_articles_items ul').animate({top:-test.top+200}, 2000);
+				});
 			}
 		});
 
