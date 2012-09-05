@@ -16,6 +16,7 @@
     <script> var page_type = "article"; </script>
     <? endif; ?>
     <script data-main="<?php bloginfo('template_directory'); ?>/static/js/main" src="<?php bloginfo('template_directory'); ?>/static/js/libs/require.js"></script>
+    <?php wp_head(); ?>
 </head>
 <body>
 

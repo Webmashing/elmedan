@@ -39,7 +39,7 @@
 							</ul>
 
 							<div id="share-bottons">
-								share buttons
+								<?php echo render_tnwsc_button(); ?>
 							</div>
 						</div>
 					</div>
