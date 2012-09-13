@@ -868,6 +868,7 @@ i.time {
 		    width: 490px;
 		    background: #fff;
 		    border-bottom: 1px solid #DDD;
+		    position: relative;
    		 	ul {
    		 		float: right;
    		 		direction: rtl;
@@ -887,6 +888,8 @@ i.time {
    		 	}
    		 	#share-bottons {
    		 		float: left;
+   		 		position: absolute;
+   		 		top: 8px;
    		 	}
    		 }
 
@@ -899,6 +902,45 @@ i.time {
    		 		direction: rtl;
    		 		font-size: 1.2em;
    		 	}
+   		 }
+
+   		 #comment-box {
+   		 	float: right;
+   		 	margin: 10px;
+   		 	width: 510px;
+
+    		 #read-more {
+   		 	.title {
+   		 		font-family: FrutigerBlack,Tahoma;
+   		 		padding: 7px;
+   		 		background: #ddd;
+   		 	}
+
+   		 	ul {
+   		 		margin:0;
+   		 		float: right;
+   		 		padding: 10px 0 10px 0px;
+   		 	}
+
+   		 	li {
+   		 		margin: 0;
+   		 		position: relative;
+   		 		float: right;
+
+   		 		.caption {
+   		 			margin: 0;
+   		 			position: absolute;
+   		 			h3 {
+   		 				margin: 0;
+   		 			}
+   		 		}
+   		 	}
+
+   		 	li:first-child {
+   		 		margin-left: 10px;
+   		 	}
+   		 }
+
    		 }
 	}
 }

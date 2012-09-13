@@ -12,10 +12,10 @@
 	<meta name="author" content="">
 	<link rel="stylesheet/less" href="<?php bloginfo('stylesheet_url'); ?>" >
 	<script src="<?php bloginfo('template_directory'); ?>/static/js/libs/less.min.js"></script>
+    <script data-main="<?php bloginfo('template_directory'); ?>/static/js/main" src="<?php bloginfo('template_directory'); ?>/static/js/libs/require.js"></script>
     <?php if(is_single()): ?>
     <script> var page_type = "article"; </script>
     <? endif; ?>
-    <script data-main="<?php bloginfo('template_directory'); ?>/static/js/main" src="<?php bloginfo('template_directory'); ?>/static/js/libs/require.js"></script>
     <?php wp_head(); ?>
 </head>
 <body>

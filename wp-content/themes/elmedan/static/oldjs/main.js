@@ -17,6 +17,9 @@ require.config({
     });
 
 require(['app'], function(App) {
+   
         // initialize the application on load
-        App.initialize();   
+        App.initialize();
+        console.log(App);
+   
 });
