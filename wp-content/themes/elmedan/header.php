@@ -13,9 +13,19 @@
 	<link rel="stylesheet/less" href="<?php bloginfo('stylesheet_url'); ?>" >
 	<script src="<?php bloginfo('template_directory'); ?>/static/js/libs/less.min.js"></script>
     <script data-main="<?php bloginfo('template_directory'); ?>/static/js/main" src="<?php bloginfo('template_directory'); ?>/static/js/libs/require.js"></script>
+    
     <?php if(is_single()): ?>
+    <!-- Display when page is single (article) -->
+    <meta property="fb:app_id" content="YOURAPPID" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="YOURTITLE" />
+    <meta property="og:url" content="YOURURL"/>
+    <meta property="og:description" content="YOURDESCRIPTION" />
+    <meta property="og:image" content="DEFAULTIMAGE" />    
     <script> var page_type = "article"; </script>
     <? endif; ?>
+
+    <!-- Wordpress plugins goes here -->
     <?php wp_head(); ?>
 </head>
 <body>
