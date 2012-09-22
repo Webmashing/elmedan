@@ -6,7 +6,7 @@ $cat_last=983;
 $cat_moht=993;
 $cat_awal=987;
 $cat_photo=991;
-
+$cat_video=992;
 function custom_excerpt_length( $length ) {
 	return 18;
 }

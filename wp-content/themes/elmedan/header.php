@@ -16,14 +16,20 @@
     
     <?php if(is_single()): ?>
     <!-- Display when page is single (article) -->
+    <?php
+        if(have_posts())
+	while (have_posts()):
+	the_post();
+                                            ?>
     <meta property="fb:app_id" content="YOURAPPID" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="YOURTITLE" />
-    <meta property="og:url" content="YOURURL"/>
-    <meta property="og:description" content="YOURDESCRIPTION" />
-    <meta property="og:image" content="DEFAULTIMAGE" />    
+    <meta property="og:title" content="<?php the_title(); ?>" />
+    <meta property="og:url" content="<?php the_permalink(); ?>"/>
+    <meta property="og:description" content="<?php bloginfo('name');?>" />
+    <meta property="og:image" content="<?php $img=get_post_meta($post->ID, "image", true);
+                                            if($img) echo resize($img,array("w"=>"510","h"=>"300", "crop"=>false)); ?> ?>" />    
     <script> var page_type = "article"; </script>
-    <? endif; ?>
+    <?endwhile; endif; ?>
 
     <!-- Wordpress plugins goes here -->
     <?php wp_head(); ?>

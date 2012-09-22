@@ -763,7 +763,11 @@ i.time {
 	    	overflow: hidden;
 	    	margin-bottom: 7px !important;
 	    	ul {
-	    	
+			a li h4 {
+				color : #33383D;
+				font-size: 14px;
+				font-weight: normal; 
+			}
 	    	}
 	    }
 
@@ -954,5 +958,7 @@ i.time {
 	position: relative;
 	bottom: 0;
 }
+
+
 
 /*****************************************************************/
